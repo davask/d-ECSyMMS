@@ -3,8 +3,8 @@ MAINTAINER davask <docker@davaskweblimited.com>
 USER root
 LABEL dwl.app.cms="eXim"
 
-RUN apt-get update && apt-get install -y php5-bcmath
-RUN apt-get install -y php5-ssh2
+RUN apt-get update && apt-get install -y php5-ssh2
+# RUN apt-get install -y php5-bcmath
 
 RUN apt-get install -y default-jre
 RUN apt-get install -y ruby # u14.04 only ?

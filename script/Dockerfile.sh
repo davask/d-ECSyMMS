@@ -15,8 +15,8 @@ USER root
 LABEL dwl.app.cms=\"eXim\"" > ${rootDir}/Dockerfile
 echo "
 RUN apt-get update && \
-apt-get install -y php${PHP_VERSION:0:1}-bcmath
-RUN apt-get install -y php${PHP_VERSION:0:1}-ssh2
+apt-get install -y php${PHP_VERSION:0:1}-ssh2
+# RUN apt-get install -y php${PHP_VERSION:0:1}-bcmath
 
 RUN apt-get install -y default-jre
 RUN apt-get install -y ruby # u14.04 only ?
