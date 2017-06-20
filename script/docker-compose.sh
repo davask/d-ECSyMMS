@@ -53,6 +53,8 @@ d-exim-mysql:
   volumes:
   - ${rootDir}/volumes/home/username/db:/docker-entrypoint-initdb.d
   - ${rootDir}/volumes/home/username/mysql_data:/var/lib/mysql
+
+# docker-compose -f ${HOME}/docker-images/app/d-ECSyMMS/docker-compose.yml up -d
 " > ${rootDir}/docker-compose.yml
 
 echo "docker-compose.yml generated with ECSyMMS:${branch}";
