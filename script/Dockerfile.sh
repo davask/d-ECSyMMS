@@ -24,7 +24,7 @@ RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 
 RUN gem update --system
 RUN gem install sass
-RUN gem install compass
+# RUN gem install compass
 
 RUN rm -rdf /dwl/default/var/www/html
 RUN git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/html
