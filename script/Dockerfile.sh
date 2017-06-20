@@ -29,9 +29,15 @@ RUN gem install sass
 RUN rm -rdf /dwl/default/var/www/html && git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/html
 
 # COPY ./build/dwl/default/var/www/html /dwl/default/var/www/html
-COPY ./build/dwl/update-exim-db.sh /dwl/update-exim-db.sh
-COPY ./build/dwl/prepare-exim.sh /dwl/prepare-exim.sh
-COPY ./build/dwl/init.sh /dwl/init.sh
+# COPY ./build/dwl/update-exim-db.sh /dwl/update-exim-db.sh
+# COPY ./build/dwl/prepare-exim.sh /dwl/prepare-exim.sh
+# COPY ./build/dwl/init.sh /dwl/init.sh
+# COPY ./build/dwl/update-exim-db.sh \
+# ./build/dwl/prepare-exim.sh \
+# ./build/dwl/init.sh \
+# /dwl/
+COPY ./build/dwl/* /dwl/
+USER admin
 " >> ${rootDir}/Dockerfile
 
 echo "Dockerfile generated with exim";
