@@ -1,0 +1,42 @@
+sonata_product:
+    class:
+        product:            Application\Sonata\ProductBundle\Entity\Product
+        package:            Application\Sonata\ProductBundle\Entity\Package
+        product_category:   Application\Sonata\ProductBundle\Entity\ProductCategory
+        product_collection: Application\Sonata\ProductBundle\Entity\ProductCollection
+        delivery:           Application\Sonata\ProductBundle\Entity\Delivery
+        category:           Application\Sonata\ClassificationBundle\Entity\Category
+        collection:         Application\Sonata\ClassificationBundle\Entity\Collection
+        media:              Application\Sonata\MediaBundle\Entity\Media
+        gallery:            Application\Sonata\MediaBundle\Entity\Gallery
+
+    products:
+        # Goodies
+        sonata.ecommerce_demo.product.goodie:
+            provider: sonata.ecommerce_demo.product.goodie.type
+            manager:  sonata.ecommerce_demo.product.goodie.manager
+
+        # Travel
+        sonata.ecommerce_demo.product.travel:
+            provider:   sonata.ecommerce_demo.product.travel.type
+            manager:    sonata.ecommerce_demo.product.travel.manager
+            variations:
+                fields: [travellers, travelDays, sku, slug, name, price, stock, vatRate, priceIncludingVat, enabled]
+
+    seo:
+        product:
+            site:         '@eximproject'
+            creator:      '@davask'
+            domain:       'http://sonata.davaskweblimited.com'
+            media_prefix: 'http://sonata.davaskweblimited.com'
+            media_format: 'reference'
+
+
+
+# Enable Doctrine to map the provided entities
+doctrine:
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    SonataProductBundle: ~
