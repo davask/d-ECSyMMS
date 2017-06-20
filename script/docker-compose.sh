@@ -41,7 +41,7 @@ echo "d-exim:
   - ${rootDir}/volumes/home/username/files:/home/username/files
   - ${rootDir}/volumes/home/username/.composer:/home/username/.composer
   working_dir: /var/www/html
-  mem_limit: 512
+  # mem_limit: 512
 d-exim-mysql:
   ports:
   - 65401:3306/tcp
