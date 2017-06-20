@@ -3,7 +3,7 @@ MAINTAINER davask <docker@davaskweblimited.com>
 USER root
 LABEL dwl.app.cms="eXim"
 
-RUN apt-get update &&  apt-get install -y php5-ssh2 default-jre rubygems
+RUN apt-get update &&  apt-get install -y php5-ssh2 default-jre ruby rubygems
 
 RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 
