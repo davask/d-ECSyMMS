@@ -430,3 +430,19 @@
 [Wed Jun 21 07:22:00.156613 2017] [authz_core:error] [pid 236] [client ::1:50058] AH01630: client denied by server configuration: /var/www/html/app/
 [Wed Jun 21 07:27:00.299148 2017] [authz_core:error] [pid 233] [client ::1:50182] AH01630: client denied by server configuration: /var/www/html/src/
 [Wed Jun 21 07:27:00.301382 2017] [authz_core:error] [pid 233] [client ::1:50182] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 07:32:00.575054 2017] [authz_core:error] [pid 1080] [client ::1:50306] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 07:32:00.577350 2017] [authz_core:error] [pid 1080] [client ::1:50306] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 07:37:00.843741 2017] [authz_core:error] [pid 237] [client ::1:50416] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 07:37:00.845969 2017] [authz_core:error] [pid 237] [client ::1:50416] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 07:42:00.997571 2017] [authz_core:error] [pid 235] [client ::1:50528] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 07:42:00.999746 2017] [authz_core:error] [pid 235] [client ::1:50528] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 07:47:01.395889 2017] [authz_core:error] [pid 234] [client ::1:50636] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 07:47:01.398132 2017] [authz_core:error] [pid 234] [client ::1:50636] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 07:52:01.565976 2017] [authz_core:error] [pid 1080] [client ::1:50748] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 07:52:01.568183 2017] [authz_core:error] [pid 1080] [client ::1:50748] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 07:55:03.664944 2017] [mpm_prefork:notice] [pid 228] AH00163: Apache/2.4.10 (Debian) OpenSSL/1.0.1t configured -- resuming normal operations
+[Wed Jun 21 07:55:03.665064 2017] [core:notice] [pid 228] AH00094: Command line: '/usr/sbin/apache2'
+[Wed Jun 21 07:59:51.312126 2017] [authz_core:error] [pid 232] [client ::1:50932] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 07:59:51.314505 2017] [authz_core:error] [pid 232] [client ::1:50932] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 08:04:51.474360 2017] [authz_core:error] [pid 233] [client ::1:51050] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 08:04:51.476668 2017] [authz_core:error] [pid 233] [client ::1:51050] AH01630: client denied by server configuration: /var/www/html/app/
