@@ -19,7 +19,7 @@ d-exim:
     DWL_CERTBOT_EMAIL: docker@davaskweblimited.com
     DWL_CERTBOT_DEBUG: 'false'
     DWL_PHP_DATETIMEZONE: Europe/Paris
-  image: davask/d-ecsymms:0.1-s2.8-p5.6-a2.4-d8.8
+  image: davask/d-ecsymms:0.1-s2.8-p7.0-a2.4-d8.8
   hostname: localhost
   net: bridge
   volumes:

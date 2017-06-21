@@ -15,7 +15,7 @@ USER root
 LABEL dwl.app.cms=\"eXim\"" > ${rootDir}/Dockerfile
 echo "
 RUN apt-get update &&  apt-get install -y \
-php${PHP_VERSION:0:1}-ssh2 \
+php${PHP_VERSION}-ssh2 \
 default-jre \
 ruby \
 rubygems
@@ -28,8 +28,10 @@ RUN gem install sass
 
 # todo manualy git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/html
 
-RUN rm -rdf /dwl/default/var/www/html
-COPY ./build/dwl/default/var/www/html /dwl/default/var/www/html
+COPY ./build/dwl/default/var/www/exim /dwl/default/var/www/exim
+
+RUN rm -rdf /dwl/default/var/www/html \
+mv /dwl/default/var/www/exim /dwl/default/var/www/html
 
 COPY ./build/dwl/update-exim-db.sh \
 ./build/dwl/prepare-exim.sh \
