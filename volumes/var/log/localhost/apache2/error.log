@@ -486,3 +486,15 @@
 [Wed Jun 21 09:37:18.014919 2017] [authz_core:error] [pid 233] [client ::1:54238] AH01630: client denied by server configuration: /var/www/html/app/
 [Wed Jun 21 09:42:18.166076 2017] [authz_core:error] [pid 232] [client ::1:54356] AH01630: client denied by server configuration: /var/www/html/src/
 [Wed Jun 21 09:42:18.168257 2017] [authz_core:error] [pid 232] [client ::1:54356] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 09:47:18.323016 2017] [authz_core:error] [pid 432] [client ::1:54488] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 09:47:18.325161 2017] [authz_core:error] [pid 432] [client ::1:54488] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 09:52:18.727045 2017] [authz_core:error] [pid 235] [client ::1:54596] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 09:52:18.729996 2017] [authz_core:error] [pid 235] [client ::1:54596] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 09:57:18.956503 2017] [authz_core:error] [pid 236] [client ::1:54702] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 09:57:18.959505 2017] [authz_core:error] [pid 236] [client ::1:54702] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 10:02:19.144355 2017] [authz_core:error] [pid 234] [client ::1:54834] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 10:02:19.146692 2017] [authz_core:error] [pid 234] [client ::1:54834] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 10:07:19.299223 2017] [authz_core:error] [pid 236] [client ::1:54960] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 10:07:19.301441 2017] [authz_core:error] [pid 236] [client ::1:54960] AH01630: client denied by server configuration: /var/www/html/app/
+[Wed Jun 21 10:12:19.558670 2017] [authz_core:error] [pid 233] [client ::1:55136] AH01630: client denied by server configuration: /var/www/html/src/
+[Wed Jun 21 10:12:19.560841 2017] [authz_core:error] [pid 233] [client ::1:55136] AH01630: client denied by server configuration: /var/www/html/app/
