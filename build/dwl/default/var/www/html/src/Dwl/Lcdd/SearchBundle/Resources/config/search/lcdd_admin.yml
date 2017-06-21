@@ -1,0 +1,10 @@
+sonata_admin:
+    title:      %lcdd_admin.title%
+    title_logo: %lcdd_admin.logo_title%
+
+    dashboard:
+
+        groups:
+            sonata.admin.group.content:
+                items:
+                    - dwl.lcdd.search.question

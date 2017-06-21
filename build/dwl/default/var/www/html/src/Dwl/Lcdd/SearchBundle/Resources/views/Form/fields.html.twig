@@ -1,0 +1,113 @@
+{# Widgets #}
+
+{% block dwllegiarticles_row %}
+    {% spaceless %}
+<style type="text/css">
+.taggle_sizer {
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: -9999px;
+  z-index: -1;
+  visibility: hidden; }
+</style>
+{% set adminFormUniqId = formUniqId | default('dwl_lcdd_searchbundle_question') %}
+{% set legiSearchIndex = legi.search.index %}
+{% set legiSearchFields = ["'DWL.TEXT.TITLE.short'"] %}
+{% set legiSearchHighlightsFields = ["'DWL.TEXT.TITLE.short'"] %}
+{% include 'DwlLcddSearchBundle:Snippet:elastic_settings.html.twig' %}
+    <div
+     ng-controller="articleCtrl"
+     ng-init="getLegiByIds()"
+     eui-index="'{{ legiSearchIndex }}'"
+     ng-cloak>
+        <legi-article
+            art-eui-select
+            class="input-group"
+            field="{{ legiSearchFields | join(',') }}"
+            highlights="{{ legiSearchHighlightsFields | join(',') }}"
+            style="display:none;"
+            ></legi-article>
+        <ui-select
+            multiple
+            art-ui-select
+            autofocus="false"
+            ng-model="uniqueIds"
+            theme="bootstrap"
+            close-on-select="false"
+            on-select="addLegiIds($item, $model)"
+            on-remove="removeLegiIds($item, $model)"
+            reset-search-input="false"
+            title="{[{placeholder}]}"
+            style="height:initial;"
+            >
+            <ui-select-match placeholder="{[{placeholder}]}">
+                {[{$item._source.DWL.TEXT.TITLE.code}]} - {[{$item._source.DWL.TEXT.TITLE.short}]}
+            </ui-select-match>
+            <ui-select-choices repeat="doc in (indexVM.results.hits.hits | orderBy:'_source.DWL.TEXT.num' | filter: $select.search) track by $index">
+                <div style="cursor:pointer;" ng-bind-html="doc._source.DWL.TEXT.TITLE.code+': '+doc._source.DWL.TEXT.TITLE.short | highlight: $select.search"></div>
+                <small>
+                    <a href="{[{doc._source.DWL.URL.REFERRAL.content}]}"
+                   target="_blank"
+                   title="legifrance"
+                   ng-bind-html="doc._source.DWL.TEXT.uniqueid"
+                   ></a>
+                </small>
+            </ui-select-choices>
+        </ui-select>
+        <div id="{{adminFormUniqId}}_legiIds">
+    {% for legiId in data %}
+            <input type="hidden" name="{{adminFormUniqId}}[legiIds][]" class=" form-control" value="{{ legiId }}">
+    {% endfor %}
+        </div>
+    {% set display_assets = display_assets|default(false) %}
+    {% if display_assets %}
+        <script type="text/javascript">
+            var adminFormUniqId = '{{adminFormUniqId}}';
+            loadArticleJs = function () {
+                importScript("{{ asset('bundles/dwllcddsearch/vendor/elastic.js/dist/elastic.min.js') }}", function () {
+                    importScript("{{ asset('bundles/dwllcddsearch/vendor/taggle.js/src/taggle.js') }}", function () {
+                        importScript("{{ asset('bundles/dwllcddsearch/js/elasticsearch.angular.js') }}", function () {
+                            importScript("{{ asset('bundles/dwllcddsearch/js/search.elasticui.js') }}", function () {
+                                importScript("{{ asset('bundles/dwllcddsearch/js/legi.dwl.js') }}");
+                            });
+                        });
+                    });
+                });
+            };
+
+            window.onload = function(){
+                if (typeof(window.angular) == 'undefined') {
+                    importScript("//cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js", function () {
+                        importScript("//cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.2.27/angular-sanitize.js", function () {
+                            importScript("//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.3.0/ui-bootstrap-tpls.min.js", function () {
+                                importScript("//cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js", loadArticleJs);
+                            });
+                        });
+                    });
+                } else {
+                    loadArticleJs();
+                }
+            };
+        </script>
+    {% endif %}
+    </div>
+    {% endspaceless %}
+{% endblock %}
+
+{% block dwllegitags_row %}
+    <div class="clearfix" ng-controller="tagCtrl">
+        {{ block('dwllegitags_widget') }}
+    </div>
+{% endblock %}
+{% block dwllegitags_widget %}
+    {% spaceless %}
+        {% set tag_type = tag_type|default('legal') %}
+        <div id="{{tag_type}}Tags"></div>
+        <dwl-legi-tags
+            type="{{tag_type}}"
+            selected="selected"
+            tags="{% for tag in data %}{% if loop.index0 > 0 %}|{% endif %}{{ tag.name }}{% endfor %}"
+            ></dwl-legi-tags>
+    {% endspaceless %}
+{% endblock %}

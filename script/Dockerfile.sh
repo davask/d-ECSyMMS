@@ -26,7 +26,8 @@ RUN gem update --system
 RUN gem install sass
 # RUN gem install compass
 
-RUN rm -rdf /dwl/default/var/www/html && git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/html
+# todo manualy git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/html
+RUN rm -rdf /dwl/default/var/www/html
 
 # COPY ./build/dwl/default/var/www/html /dwl/default/var/www/html
 # COPY ./build/dwl/update-exim-db.sh /dwl/update-exim-db.sh

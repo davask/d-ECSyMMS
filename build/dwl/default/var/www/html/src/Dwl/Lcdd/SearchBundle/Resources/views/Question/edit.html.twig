@@ -1,0 +1,89 @@
+{% extends "DwlLcddSearchBundle:Question:base.html.twig" %}
+
+{% block bodyClass %}{{parent()}} question edit{% endblock %}
+{% block contentClass %}{{parent()}} edit{% endblock %}
+
+{% block exim_profile_action %}
+    {% if (question.speaker is not null and app.user.username == question.speaker.customer.user.username) or ('ROLE_SUPER_ADMIN' in app.user.roles) == true %}
+<ul class="nav navbar-nav text-center">
+    <li>
+        <a href="javascript:jQuery('[name={{edit_form.vars.name}}]').submit();">
+            {{ 'Enregistrer' | trans }}
+        </a>
+    </li>
+        {% if question.slug is defined and question.slug != '' %}
+    <li>
+        <a href="{{ path('dwl_lcdd_get_question', { 'slug' : question.slug }) }}">
+            {{ 'Annuler' | trans }}
+        </a>
+    </li>
+        {% endif %}
+</ul>
+        {% if delete_form is defined %}
+<ul class="nav navbar-nav navbar-right text-center">
+    <li>
+        {{ form(delete_form) }}
+    </li>
+</ul>
+        {% endif %}
+    {% endif %}
+{% endblock %}
+
+{% block sonata_profile_form_start %}
+{{ form_start(edit_form) }}
+{% endblock %}
+
+{% block sonata_profile_form_errors %}
+{{ form_errors(edit_form) }}
+{% endblock %}
+
+{% block content_embed %}
+<div class="row">
+<div class="col-xs-12">{{ form_row(edit_form.categories) }}</div>
+<div class="col-xs-12">
+    {{ form_label(edit_form.question) }}<h1>{{ form_widget(edit_form.question) }}</h1>
+</div>
+<div class="col-xs-12">
+    {{ form_row(edit_form.speaker) }}
+</div>
+</div>
+
+{% endblock %}
+
+{% block content_video %}
+<div class="row">
+    {% if question.media.providerMetadata is defined %}
+            <div class="embed-responsive embed-responsive-16by9 col-xs-12">
+              <!-- <iframe class="embed-responsive-item" src="..."></iframe> -->
+              {{ question.media.providerMetadata.html | raw}}
+            </div>
+    {% else %}
+    {% endif %}
+    {{ form_row(edit_form.media) }}
+</div>
+{% endblock %}
+
+{% block _dwl_lcdd_searchbundle_question_civilTags_widget %}
+    <div class="text_widget">
+        {{ block('form_widget_simple') }}
+    </div>
+{% endblock %}
+{% block sonata_profile_form_end %}
+<div>
+    <div class="content-embed">
+        <div class="dwl-article-form-elements">
+            {{ form_row(edit_form.legiIds) }}
+            {{ form_row(edit_form.legalTags) }}
+            {{ form_row(edit_form.civilTags) }}
+        </div>
+        {{ form_row(edit_form.unqualifiedQuestions) }}
+    </div>
+</div>
+<div class="content-embed">
+    {{ form_row(edit_form.qualified) }}
+    {{ form_row(edit_form.submit, { 'label' : 'Enregistrer', 'attr' : { 'class' : 'btn-link pull-right' } }) }}
+    {{ form_end(edit_form) }}
+</div>
+{% endblock %}
+
+{% block lcdd_list_similar '' %}

@@ -1,0 +1,19 @@
+{% trans_default_domain "DwlLcddSearchBundle" %}
+{% extends "EximTheme"~theme.name~"FrontBundle:Template:default.html.twig" %}
+{% block page_content %}
+<div class="body-content clearfix question {% block contentClass %}{% endblock %}">
+    {% block sonata_profile_form_start '' %}
+    {% block sonata_profile_form_errors '' %}
+
+    <div class="content-embed">
+        {% block content_embed '' %}
+    </div>
+    <div class="content-media">
+        <div class="content-embed">
+            {% block content_video '' %}
+        </div>
+    </div>
+    {% block sonata_profile_form_end '' %}
+
+</div>
+{% endblock %}

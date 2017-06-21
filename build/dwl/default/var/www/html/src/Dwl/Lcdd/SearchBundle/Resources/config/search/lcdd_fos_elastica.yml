@@ -1,0 +1,31 @@
+fos_elastica:
+    clients:
+        lcdd:
+            host: %lcdd.elastic.host%
+            port: %lcdd.elastic.port%
+
+    indexes:
+
+        lcdd:
+
+            types:
+
+                # lcdd Search Bundle
+                question:
+                    properties:
+                        slug:                   { type: string, boost: 5 }
+                        question:               { type: string }
+                        qualified:              { type: boolean }
+                        date_create:            { type: date }
+                        date_update:            { type: date }
+                        # legalTags
+                        # civilTags
+                        # categories
+                        # media
+                        # speaker
+
+                    persistence:
+                        driver:                 orm
+                        model:                  Dwl\Lcdd\SearchBundle\Entity\Question
+                        provider:               ~
+                        finder:                 ~

@@ -1,0 +1,9 @@
+parameters:
+    lcdd.base.list.questions.class: Dwl\Lcdd\BaseBundle\Block\ListQuestionsBlockService
+
+services:
+   lcdd.base.list.questions:
+       class: '%lcdd.base.list.questions.class%'
+       tags:
+            - { name: sonata.block }
+       arguments: ['lcdd.base.list.questions', '@templating', '@service_container', '@doctrine.orm.entity_manager']

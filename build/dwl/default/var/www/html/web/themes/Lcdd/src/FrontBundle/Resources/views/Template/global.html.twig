@@ -1,0 +1,137 @@
+{%- extends 'EximTheme'~theme.name~'FrontBundle:Settings:variables.html.twig' -%}
+{%- block theme -%}
+<!DOCTYPE html>
+<html {{ sonata_seo_html_attributes() }}>
+    <head {{ sonata_seo_head_attributes() }}>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        {{ sonata_seo_title() }}
+        {{ sonata_seo_metadatas() }}
+        {% include 'EximTheme'~theme.name~'FrontBundle:Template:Head/favicon.html.twig' %}
+
+        {% include 'EximTheme'~theme.name~'FrontBundle:Template:Head/stylesheets.html.twig' %}
+
+        {% block exim_page_header_stylesheets '' %}
+
+        {% include 'EximTheme'~theme.name~'FrontBundle:Template:Head/javascripts.html.twig' %}
+
+        {% block exim_page_header_javascripts %}
+        <script type="text/javascript">
+            var importScript = (function () {
+
+              function loadError (oError) {
+                throw new URIError("The script " + oError.target.src + " is not accessible.");
+              }
+
+              return function (sSrc, fOnload) {
+                var oScript = document.createElement("script");
+                oScript.type = "text\/javascript";
+                oScript.onerror = loadError;
+                if (fOnload) { oScript.onload = fOnload; }
+                document.body.appendChild(oScript);
+                oScript.src = sSrc;
+              }
+
+            })();
+            var importStylesheet = (function () {
+
+              function loadError (oError) {
+                throw new URIError("The stylesheet " + oError.target.src + " is not accessible.");
+              }
+
+              return function (sSrc, fOnload) {
+                var oStyle = document.createElement("link");
+                oStyle.rel = "stylesheet";
+                oStyle.media = "all";
+                oStyle.onerror = loadError;
+                if (fOnload) { oStyle.onload = fOnload; }
+                document.head.appendChild(oStyle);
+                oStyle.href = sSrc;
+              }
+
+            })();
+        </script>
+        {% endblock %}
+
+    </head>
+
+    <body class="{{ theme.name }} {{ pageClass | default('npc') }} container-fluid{% block bodyClass %} global{% endblock %}">
+        <!--[if lt IE 9]>
+            <p class="row browserupgrade">Vous utilisez un navigateur <strong>obsol&egrave;te</strong>. Merci de le <a href="http://browsehappy.com/">mettre-&agrave;-jour</a> afin d'am&eacute;liorer votre experience.</p>
+        <![endif]-->
+
+    {% if app.user %}
+
+        {% block sonata_page_top_bar %}
+
+        {% if sonata_page.isEditor or ( app.user and is_granted('ROLE_PREVIOUS_ADMIN') ) %}
+            {%- include 'EximTheme'~theme.name~'FrontBundle:Template:Header/inline_edition.html.twig' %}
+        {% endif %}
+
+        <header class="row navbar navbar-admin navbar-fixed-bottom" role="banner" {% include 'EximTheme'~theme.name~'FrontBundle:Template:Header/inline_edition.html.twig' with { 'part' : 'attribut' } %}>
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#exim-navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">
+        {% if speaker is defined %}
+                    <a href="{{ path('lcdd_speaker_get', { 'username' : speaker.customer.user.username }) }}">
+                        {% media speaker.avatar, 'lcdd_icon' with { 'width': '16', 'height': '16' } %} <b>{{speaker.customer.user.username}}</b>
+                    </a>
+        {% else %}
+                    <a href="{{ path('lcdd_speaker_get', { 'username' : app.user.username }) }}">
+                        <i class="fa fa-home fa-fw" aria-hidden="true"></i> <b>{{app.user.username}}</b>
+                    </a>
+        {% endif %}
+                  </a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="exim-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right text-center">
+                        {% include 'EximTheme'~theme.name~'FrontBundle:Template:Header/admin.html.twig' %}
+                        {% include 'EximTheme'~theme.name~'FrontBundle:Template:Header/edition.html.twig' %}
+                    </ul>
+                    <ul class="nav navbar-nav text-center">
+                        {% include 'EximTheme'~theme.name~'FrontBundle:Template:Header/switch.html.twig' %}
+                        {% include 'EximTheme'~theme.name~'FrontBundle:Template:Header/dashboard.html.twig' %}
+                        {% block exim_profile_action %}{% endblock %}
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </header>
+
+        {% endblock %}
+    {% endif %}
+
+        {% block sonata_page_container %}
+        {% endblock %}
+
+        <footer class="row text-center">
+            {% block footer %}
+            {{ sonata_page_render_container('footer', 'global') }}
+            {% endblock %}
+
+        </footer>
+
+        {% block sonata_page_asset_footer %}
+
+        {% include 'EximTheme'~theme.name~'FrontBundle:Template:Footer/javascripts.html.twig' %}
+
+        {% endblock %}
+        {% block exim_page_asset_footer %}
+        {% endblock %}
+
+        {% block exim_page_footer_vendor_javascripts %}
+        {% endblock %}
+        {% block exim_page_footer_javascripts %}
+        {% endblock %}
+
+        {% block exim_page_scripts '' %}
+
+    </body>
+</html>
+{% endblock %}

@@ -44,13 +44,13 @@ class AppKernel extends Kernel
             // SONATA FEATURE
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            new Sonata\PageBundle\SonataPageBundle(), // 3.x-addBlock2Admin
+            new Sonata\PageBundle\SonataPageBundle(),
             new Sonata\NewsBundle\SonataNewsBundle(),
-            new Sonata\MediaBundle\SonataMediaBundle(), // 3.x-addResponsiveness
+            new Sonata\MediaBundle\SonataMediaBundle(),
 
             new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
-            new Sonata\AdminBundle\SonataAdminBundle(), // 3.x-addBlock2Admin
+            new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
 
             // Disable this if you don't want the audit on entities
@@ -79,7 +79,7 @@ class AppKernel extends Kernel
             new Sonata\IntlBundle\SonataIntlBundle(),
             new Sonata\FormatterBundle\SonataFormatterBundle(),
             new Sonata\CacheBundle\SonataCacheBundle(),
-            new Sonata\BlockBundle\SonataBlockBundle(), // 3.x-addBlock2Admin
+            new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(), // 2.x-exim
             new Sonata\ClassificationBundle\SonataClassificationBundle(),
             new Sonata\NotificationBundle\SonataNotificationBundle(),
@@ -123,6 +123,8 @@ class AppKernel extends Kernel
             // EXIM CORE
             new Dwl\Exim\CoreBundle\DwlEximCoreBundle(),
             new Dwl\Exim\ThemeBundle\DwlEximThemeBundle(),
+            new Dwl\Exim\AdminBundle\DwlEximAdminBundle(),
+            new Dwl\Exim\FrontBundle\DwlEximFrontBundle(),
 
             // APP
             // new AppBundle\AppBundle(),
@@ -132,6 +134,7 @@ class AppKernel extends Kernel
             new FOS\ElasticaBundle\FOSElasticaBundle(),
 
             // LCDD
+            new Dwl\Lcdd\BaseBundle\DwlLcddBaseBundle(),
             new Dwl\Lcdd\SearchBundle\DwlLcddSearchBundle(),
             new Dwl\Lcdd\SpeakerBundle\DwlLcddSpeakerBundle(),
 
