@@ -1,0 +1,33 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_driver: pdo_mysql
+    database_host: 163.172.49.222
+    database_port: 65031
+    database_name: lcdd
+    database_user: lcdd
+    database_password: lcdddwl42
+    mailer_transport: smtp
+    mailer_host: localhost
+    mailer_user: null
+    mailer_password: null
+    locale: fr
+    secret: lcdddwl42
+    exim.theme.name: Lcdd
+    sonata_admin.title: 'La chaine du droit'
+    sonata_admin.logo_title: '%exim.theme.path.web%/media/images/icon-full.png'
+    sonata_news.blog_title: 'La chaine du droit'
+    sonata_news.blog_link: 'http://dev.lachainedudroit.fr'
+    sonata_news.blog_description: 'La chaine du droit pour tous'
+    sonata_news.salt: lcdddwl42
+    sonata_news.comment.emails:
+        - admin@davaskweblimited.com
+    sonata_news.comment.email_from: savoir@lachainedudroit.fr
+    sonata_media.cdn.host: 'http://dev.lachainedudroit.fr/themes/%exim.theme.name%/uploads/media'
+    sonata_user.google_authenticator.server: www.lachainedudroit.fr
+    sonata_page.varnish.command: 'if [ ! -r "/etc/varnish/secret" ]; then echo "VALID ERROR :/"; else varnishadm -S /etc/varnish/secret -T 127.0.0.1:6082 {{ COMMAND }} "{{ EXPRESSION }}"; fi;'
+    sonata.fixtures.product.fake: 1
+    sonata.fixtures.customer.fake: 5
+    sonata.fixtures.page.create_subsite: true
+    sonata_seo.title: 'La Chainde du Droit'
+    sonata_seo.baseline: 'Comprendre le droit'
+    sonata_news.comment.enabled: false

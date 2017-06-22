@@ -1,0 +1,17 @@
+fos_rest:
+    param_fetcher_listener: true
+    body_listener:          true
+    format_listener:        true
+    view:
+        view_response_listener: force
+        templating_formats:
+            html: true
+            json: false
+        formats:
+            json: true
+    body_converter:
+        enabled: false
+        validate: true
+    exception:
+        messages:
+            'Symfony\Component\HttpKernel\Exception\NotFoundHttpException': true
