@@ -19,6 +19,7 @@ php${PHP_VERSION}-bcmath \
 php${PHP_VERSION}-ssh2 \
 default-jre \
 ruby \
+ruby-dev \
 rubygems
 
 RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
