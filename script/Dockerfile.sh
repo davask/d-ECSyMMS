@@ -15,6 +15,7 @@ USER root
 LABEL dwl.app.cms=\"eXim\"" > ${rootDir}/Dockerfile
 echo "
 RUN apt-get update &&  apt-get install -y \
+php${PHP_VERSION}-bcmath \
 php${PHP_VERSION}-ssh2 \
 default-jre \
 ruby \
