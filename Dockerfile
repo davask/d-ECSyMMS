@@ -13,7 +13,7 @@ RUN gem install compass
 
 # todo manualy git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/html
 
-COPY ./build/dwl/default/var/www/exim /dwl/default/var/www/exim
+# COPY ./build/dwl/default/var/www/exim /dwl/default/var/www/exim
 
 RUN rm -rdf /dwl/default/var/www/html; git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/exim; cp -rdf /dwl/default/var/www/exim /dwl/default/var/www/html
 
