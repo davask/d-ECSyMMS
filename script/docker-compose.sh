@@ -56,6 +56,7 @@ d-exim-mysql:
     DWL_USER_NAME: username
   hostname: localhost
   image: mysql:latest
+  restart: always
   volumes:
   - ${rootDir}/volumes/home/username/db/my.cnf:/etc/alternatives/my.cnf
   - ${rootDir}/volumes/home/username/db/mysql:/docker-entrypoint-initdb.d

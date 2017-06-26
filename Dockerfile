@@ -8,15 +8,8 @@ RUN apt-get update &&  apt-get install -y php7.0-bcmath php7.0-ssh2 default-jre 
 RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 
 RUN gem update --system
-RUN gem install sass
-RUN gem install compass
+RUN gem install sass compass
 
-# todo manualy git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/html
-
-# COPY ./build/dwl/default/var/www/exim /dwl/default/var/www/exim
-
-RUN rm -rdf /dwl/default/var/www/html; git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/exim; cp -rdf /dwl/default/var/www/exim /dwl/default/var/www/html
-
-COPY ./build/dwl/update-exim-db.sh ./build/dwl/prepare-exim.sh ./build/dwl/init.sh /dwl/
+COPY ./build/dwl/get-exim-app.sh ./build/dwl/update-exim-db.sh ./build/dwl/prepare-exim.sh ./build/dwl/init.sh /dwl/
 USER admin
 
