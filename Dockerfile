@@ -3,7 +3,6 @@ MAINTAINER davask <docker@davaskweblimited.com>
 USER root
 LABEL dwl.app.cms="eXim"
 
-ENV
 RUN apt-get update &&  apt-get install -y php7.0-bcmath php7.0-ssh2 default-jre ruby ruby-dev rubygems
 
 RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
