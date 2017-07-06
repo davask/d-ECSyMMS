@@ -23,7 +23,7 @@ app:
     DWL_PHP_DATETIMEZONE: 'Europe/Paris'
   tty: true
   hostname: localhost
-  image: davask/d-ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8
+  image: davask/d-ECSyMMS:0.1-s2.8-p7.0-a2.4-u16.04
   net: bridge
   volumes:
     - ./volumes/home/username:/home/username

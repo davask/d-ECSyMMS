@@ -1,4 +1,4 @@
-FROM davask/d-symfony:2.8-p7.0-a2.4-d8.8
+FROM davask/d-symfony:2.8-p7.0-a2.4-u16.04
 MAINTAINER davask <docker@davaskweblimited.com>
 USER root
 RUN apt-get update &&  apt-get install -y \
