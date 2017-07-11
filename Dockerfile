@@ -19,7 +19,7 @@ RUN gem install sass compass
 
 COPY ./build/dwl/setup-exim-app.sh ./build/dwl/get-exim-app.sh ./build/dwl/update-exim-db.sh ./build/dwl/prepare-exim.sh /dwl/
 
-# CMD ["/dwl/init.sh && service sendmail start && apachectl -k graceful && /bin/bash"]
+# CMD ["/dwl/init.sh && service sendmail start && apache2ctl -D FOREGROUND"]
 
 RUN chmod +x /dwl/init.sh && chown root:sudo -R /dwl
 USER admin
