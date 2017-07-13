@@ -6,8 +6,8 @@
 [![[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 image][badge-docker]](https://hub.docker.com/r/davask/d-ECSyMMS/)
 
 [badge-docker]: https://dockeri.co/image/davask/d-ECSyMMS "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 image"
-[badge-shields]: https://img.shields.io/badge/davask%2Fd--ECSyMMS-prod-brightgreen.svg?style=flat "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 in prod"
-[badge-fossa]: https://img.shields.io/badge/davask%2Fd--ECSyMMS-license--MIT-brightgreen.svg?style=flat "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 license"
+[badge-shields]: https://img.shields.io/badge/davask%2Fd--ECSyMMS-env_prod-brightgreen.svg?style=flat "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 in prod"
+[badge-fossa]: https://img.shields.io/badge/davask%2Fd--ECSyMMS-license_MIT-brightgreen.svg?style=flat "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 license"
 
 ## Exposed port
 
