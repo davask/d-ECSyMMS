@@ -1,7 +1,7 @@
 FROM davask/d-symfony:2.8-p7.0-a2.4-u16.04
 MAINTAINER davask <docker@davaskweblimited.com>
 USER root
-RUN apt-get update &&  apt-get install -y \
+RUN apt-get update && apt-get install -y \
 php7.0-bcmath \
 php7.0-ssh2 \
 default-jre \
@@ -19,7 +19,7 @@ RUN gem install sass compass
 
 COPY ./build/dwl/setup-exim-app.sh ./build/dwl/get-exim-app.sh ./build/dwl/update-exim-db.sh ./build/dwl/prepare-exim.sh /dwl/
 
-# CMD ["/dwl/init.sh && service sendmail start && apachectl -k graceful && /bin/bash"]
+# CMD ["/dwl/init.sh && service sendmail start && apache2ctl -D FOREGROUND"]
 
 RUN chmod +x /dwl/init.sh && chown root:sudo -R /dwl
 USER admin

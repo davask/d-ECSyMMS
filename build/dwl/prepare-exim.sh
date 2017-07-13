@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 
 # src : https://symfony.com/doc/current/bundles/SonataAdminBundle/getting_started/installation.html
 # composer require sonata-project/admin-bundle;
