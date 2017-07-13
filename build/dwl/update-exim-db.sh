@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/bash
 sfbin="app";
 if [ ! -f /home/${DWLC_USER_NAME}/files/${sfbin}/console ]; then
     sfbin="bin";

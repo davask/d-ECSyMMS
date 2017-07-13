@@ -1,21 +1,25 @@
-FROM davask/d-symfony:2.8-p5.6-a2.4-d8.8
+FROM davask/d-symfony:
 MAINTAINER davask <docker@davaskweblimited.com>
 USER root
-LABEL dwl.app.cms="eXim"
+RUN apt-get update &&  apt-get install -y \
+php5.6-bcmath \
+php5.6-ssh2 \
+default-jre \
+ruby \
+ruby-dev \
+rubygems
 
-RUN apt-get update &&  apt-get install -y php5-ssh2 default-jre ruby rubygems
-
-RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
+RUN apt-get upgrade -y && \
+apt-get autoremove -y && \
+apt-get clean && \
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN gem update --system
-RUN gem install sass
-# RUN gem install compass
+RUN gem install sass compass
 
-# todo manualy git clone https://github.com/davask/exim-cms.git --branch lcdd --single-branch /dwl/default/var/www/html
+COPY ./build/dwl/setup-exim-app.sh ./build/dwl/get-exim-app.sh ./build/dwl/update-exim-db.sh ./build/dwl/prepare-exim.sh /dwl/
 
-RUN rm -rdf /dwl/default/var/www/html
-COPY ./build/dwl/default/var/www/html /dwl/default/var/www/html
+# CMD ["/dwl/init.sh && service sendmail start && apache2ctl -D FOREGROUND"]
 
-COPY ./build/dwl/update-exim-db.sh ./build/dwl/prepare-exim.sh ./build/dwl/init.sh /dwl/
+RUN chmod +x /dwl/init.sh && chown root:sudo -R /dwl
 USER admin
-
