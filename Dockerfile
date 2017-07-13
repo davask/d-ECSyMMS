@@ -2,7 +2,7 @@ FROM davask/d-symfony:2.8-p5.6-a2.4-d8.8
 MAINTAINER davask <docker@davaskweblimited.com>
 USER root
 RUN apt-get update &&  apt-get install -y \
-php5.6-bcmath \
+php-bcmath \
 php5.6-ssh2 \
 default-jre \
 ruby \
