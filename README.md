@@ -40,11 +40,11 @@
 - /etc/letsencrypt
 ## LABEL
 
-- dwl.server.os="symfony "
+- dwl.server.os="symfony 0.1-s2.8-p5.6-a2.4-d8.8"
 
-- dwl.server.base="ECSyMMS "
+- dwl.server.base="ECSyMMS 0.1-s2.8-p5.6-a2.4-d8.8"
 
-- dwl.server.http="apache "
+- dwl.server.http="apache 0.1-s2.8-p5.6-a2.4-d8.8"
 
 ## EXTRA
 

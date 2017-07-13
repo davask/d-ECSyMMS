@@ -27,7 +27,7 @@ services:
       DWL_PHP_DATETIMEZONE: 'Europe/Paris'
     tty: true
     hostname: localhost
-    image: davask/d-ECSyMMS:
+    image: davask/d-ECSyMMS:0.1-s2.8-p5.6-a2.4-d8.8
     deploy:
       restart_policy:
         condition: on-failure
