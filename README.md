@@ -1,6 +1,5 @@
 # dockerfile
 
-[![[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 license][badge-travis]](https://travis-ci.org/davask/d-ECSyMMS)
 [![[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 in prod][badge-shields]](https://hub.docker.com/r/davask/d-ECSyMMS/)
 [![[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 license][badge-license]](https://app.fossa.io/projects/git%2Bhttps%3A%2F%2Fgithub.com%2Fdavask%2Fd-ECSyMMS?ref=badge_shield)
 
@@ -9,7 +8,6 @@
 [badge-docker]: https://dockeri.co/image/davask/d-ECSyMMS "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 image"
 [badge-shields]: https://img.shields.io/badge/davask%2Fd--ECSyMMS-env_prod-brightgreen.svg?style=flat "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 in prod"
 [badge-license]: https://img.shields.io/badge/davask%2Fd--ECSyMMS-license_MIT-brightgreen.svg?style=flat "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 license"
-[badge-travis]: https://travis-ci.org/davask/d-ECSyMMS.svg?branch=0.1-s2.8-p7.0-a2.4-d8.8 "[dwl] ECSyMMS:0.1-s2.8-p7.0-a2.4-d8.8 license"
 
 ## Exposed port
 
